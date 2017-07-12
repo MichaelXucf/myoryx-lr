@@ -25,6 +25,20 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <scope>provided</scope>
+      <version>2.11.8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scalap</artifactId>
+      <scope>provided</scope>
+      <version>2.11.8</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.cloudera.oryx</groupId>
       <artifactId>oryx-api</artifactId>
       <scope>provided</scope>
@@ -34,6 +48,27 @@
     <dependency>
       <groupId>com.cloudera.oryx</groupId>
       <artifactId>oryx-ml</artifactId>
+      <scope>provided</scope>
+      <version>2.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.cloudera.oryx</groupId>
+      <artifactId>oryx-common</artifactId>
+      <scope>provided</scope>
+      <version>2.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.cloudera.oryx</groupId>
+      <artifactId>oryx-app-common</artifactId>
+     <scope>provided</scope>
+      <version>2.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.cloudera.oryx</groupId>
+      <artifactId>oryx-app-serving</artifactId>
       <scope>provided</scope>
       <version>2.4.1</version>
     </dependency>
@@ -83,7 +118,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <!--<version>3.6.1</version>-->
+        <version>3.6.1</version>
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
