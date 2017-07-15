@@ -16,8 +16,6 @@ object ScalaTest{
     matchTest("AB")
     matchTest("OTHER")
 
-    if (true || true){}
-
   }
 
 
