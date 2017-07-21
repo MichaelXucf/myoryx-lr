@@ -38,9 +38,15 @@ class LRScalaServingModelManager(config: Config, message: String) extends Abstra
         if (pmml == null) {
           return
         }
-        val md = pmml.getModels.get(0).asInstanceOf[LogisticRegressionModel]
+
+        /*val pmmlModel = pmml.getModels.get(0).asInstanceOf[RegressionModel]
+
         if(model == null || model.getNumberClasses() != md.numClasses){
           model = new LRScalaServingModel(md, inputSchema)
+        }*/
+
+        if(model == null ){
+          model = new LRScalaServingModel(pmml, inputSchema)
         }
 
       case _ => throw new IllegalArgumentException("Bad hey: " + key)
