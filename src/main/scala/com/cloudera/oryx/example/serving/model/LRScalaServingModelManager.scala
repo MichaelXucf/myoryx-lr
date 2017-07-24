@@ -6,7 +6,6 @@ import com.cloudera.oryx.app.schema.InputSchema
 import com.google.common.base.Preconditions
 import com.typesafe.config.Config
 import org.apache.hadoop.conf.Configuration
-import org.apache.spark.mllib.classification.LogisticRegressionModel
 import org.slf4j.{Logger, LoggerFactory}
 
 /**
@@ -23,7 +22,7 @@ class LRScalaServingModelManager(config: Config, message: String) extends Abstra
     //TODO do something
     minModelLoadFraction = config.getDouble("oryx.serving.min-model-load-fraction")
     Preconditions.checkArgument(minModelLoadFraction >= 0.0 && minModelLoadFraction <= 1.0)
-    //inputSchema = new InputSchema(config)
+    inputSchema = new InputSchema(config)
   }
 
   override def consumeKeyMessage(key: String, message: String, hadoopConf: Configuration): Unit = {

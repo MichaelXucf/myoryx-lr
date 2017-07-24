@@ -59,10 +59,6 @@ class LRScalaUpdateWithPipeLine(config: Config, message: String) extends MLUpdat
       .setInputCols(inputCol)
       .setOutputCol("features")
 
-    vectorAssembler.transform(trainDF)
-      .select("label", "features")
-      .show(3)
-
     val mlr = new LogisticRegression()
       .setMaxIter(30)
       .setRegParam(0.0)

@@ -219,6 +219,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.michaelxu.oryx:*</include>
+                                    <include>org.jpmml:*</include>
                                 </includes>
                             </artifactSet>
                             <filters>
@@ -233,10 +234,20 @@
                             </filters>
                             <relocations>
                                 <relocation>
-                                    <pattern>org.jpmml</pattern>
-                                    <shadedPattern>oryx.org.jpmml</shadedPattern>
+                                    <pattern>org.jpmml.model</pattern>
+                                    <shadedPattern>oryx.org.jpmml.model</shadedPattern>
                                     <includes>
-                                        <include>org.jpmml.**</include>
+                                        <include>org.jpmml.model.**</include>
+                                    </includes>
+                                    <!--<excludes>
+                                        <exclude>org.jpmml.converter.**</exclude>
+                                    </excludes>-->
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.jpmml.schema</pattern>
+                                    <shadedPattern>oryx.org.jpmml.schema</shadedPattern>
+                                    <includes>
+                                        <include>org.jpmml.schema.**</include>
                                     </includes>
                                 </relocation>
                                 <relocation>
